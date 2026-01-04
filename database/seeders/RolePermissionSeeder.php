@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\User;
+
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -17,6 +19,15 @@ class RolePermissionSeeder extends Seeder
     public function run(): void
     {
         app()[PermissionRegistrar::class]->forgetCachedPermissions();
+
+        $user = User::firstOrCreate(
+            ['email' => 'john@mail.com'],
+            [
+                'name' => 'John Doe',
+                'password' => 'John_123',
+                'email_verified_at' => now(),
+            ]
+        );
 
         // Permissions
         $permissions = [
@@ -64,38 +75,7 @@ class RolePermissionSeeder extends Seeder
         // Assign permissions
         $admin->givePermissionTo(Permission::all());
 
-        // $therapist->givePermissionTo([
-        //     'view bookings',
-        //     'create bookings',
-        //     'edit bookings',
-        //     'delete bookings',
-
-        //     'view products',
-        //     'create products',
-        //     'edit products',
-        //     'delete products',
-            
-        //     'view orders',
-        //     'create orders',
-        //     'edit orders',
-        //     'delete orders',
-        // ]);
-
-        // $customer->givePermissionTo([
-        //     'view bookings',
-        //     'create bookings',
-        //     'edit bookings',
-        //     'delete bookings',
-
-        //     'view products',
-        //     'create products',
-        //     'edit products',
-        //     'delete products',
-            
-        //     'view orders',
-        //     'create orders',
-        //     'edit orders',
-        //     'delete orders',
-        // ]);
+        // Assign role to user
+        $user->assignRole($admin);
     }
 }

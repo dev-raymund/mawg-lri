@@ -14,31 +14,13 @@ import {
 import { 
     dashboard, 
     users, 
-    partners, 
-    bookings, 
-    products, 
-    orders, 
-    reports, 
-    withdraw, 
-    announcement, 
-    roles_permissions, 
-    chat 
+    roles_permissions,
 } from '@/routes';
 import { type NavItem } from '@/types';
 import { Link } from '@inertiajs/react';
 import { 
-    Archive, 
-    Bell, 
-    BookOpen, 
-    Calendar, 
-    ChartLine, 
-    Folder, 
-    Handshake, 
     LayoutGrid, 
-    MessageCircle, 
-    ShoppingCart, 
     Unlock, 
-    Upload, 
     Users 
 } from 'lucide-react';
 import AppLogo from './app-logo';
@@ -49,44 +31,9 @@ const mainNavItems: NavItem[] = [
         href: dashboard(),
         icon: LayoutGrid,
     },
-    {
-        title: 'Bookings',
-        href: bookings(),
-        icon: Calendar,
-    },
-    {
-        title: 'Products',
-        href: products(),
-        icon: Archive,
-    },
-    {
-        title: 'Orders',
-        href: orders(),
-        icon: ShoppingCart,
-    },
-    {
-        title: 'Reports',
-        href: reports(),
-        icon: ChartLine,
-    },
-    {
-        title: 'Withdraw',
-        href: withdraw(),
-        icon: Upload,
-    },
-    {
-        title: 'Announcement',
-        href: announcement(),
-        icon: Bell,
-    },
 ];
 
 const footerNavItems: NavItem[] = [
-    {
-        title: 'Partners',
-        href: partners(),
-        icon: Handshake,
-    },
     {
         title: 'Users',
         href: users(),
@@ -108,11 +55,6 @@ const footerNavItems: NavItem[] = [
             'edit role/permissions', 
             'delete role/permissions'
         ], 
-    },
-    {
-        title: 'Live Chat',
-        href: chat(),
-        icon: MessageCircle,
     },
 ];
 

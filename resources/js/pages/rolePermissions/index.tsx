@@ -297,7 +297,7 @@ export default function Index({ roles_permissions, all_permissions }: rolesPermi
                         className="max-w-sm"
                     />
 
-                     <Button 
+                    <Button 
                         onClick={() => setIsAddDialogOpen(true)} 
                         className="bg-blue-600 hover:bg-blue-700"
                     >

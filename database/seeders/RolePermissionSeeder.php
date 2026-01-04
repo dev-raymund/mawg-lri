@@ -40,26 +40,6 @@ class RolePermissionSeeder extends Seeder
             'create role/permissions',
             'edit role/permissions',
             'delete role/permissions',
-
-            'view partners',
-            'create partners',
-            'edit partners',
-            'delete partners',
-
-            'view bookings',
-            'create bookings',
-            'edit bookings',
-            'delete bookings',
-
-            'view products',
-            'create products',
-            'edit products',
-            'delete products',
-            
-            'view orders',
-            'create orders',
-            'edit orders',
-            'delete orders',
             
         ];
 

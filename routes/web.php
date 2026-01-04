@@ -45,49 +45,6 @@ Route::delete('/users/{user}', [UsersController::class, 'destroy'])
     ->name('users.destroy');
 
 
-Route::middleware(['auth', 'verified'])->group(function () {
-    Route::get('partners', function () {
-        return Inertia::render('partners');
-    })->name('partners');
-});
-
-Route::middleware(['auth', 'verified'])->group(function () {
-    Route::get('bookings', function () {
-        return Inertia::render('bookings');
-    })->name('bookings');
-});
-
-Route::middleware(['auth', 'verified'])->group(function () {
-    Route::get('products', function () {
-        return Inertia::render('products');
-    })->name('products');
-});
-
-Route::middleware(['auth', 'verified'])->group(function () {
-    Route::get('orders', function () {
-        return Inertia::render('orders');
-    })->name('orders');
-});
-
-Route::middleware(['auth', 'verified'])->group(function () {
-    Route::get('reports', function () {
-        return Inertia::render('reports');
-    })->name('reports');
-});
-
-Route::middleware(['auth', 'verified'])->group(function () {
-    Route::get('withdraw', function () {
-        return Inertia::render('withdraw');
-    })->name('withdraw');
-});
-
-Route::middleware(['auth', 'verified'])->group(function () {
-    Route::get('announcement', function () {
-        return Inertia::render('announcement');
-    })->name('announcement');
-});
-
-
 Route::get('/roles-permissions', [RolesPermissionsController::class, 'index'])
     ->middleware(['auth', 'permission:view role/permissions'])
     ->name('roles_permissions');
@@ -111,12 +68,5 @@ Route::delete('/roles/{role}/permissions/{permission}', [RolesPermissionsControl
 Route::delete('/roles/{role}', [RolesPermissionsController::class, 'destroy'])
     ->middleware(['auth', 'permission:delete role/permissions'])
     ->name('roles.destroy');
-
-
-Route::middleware(['auth', 'verified'])->group(function () {
-    Route::get('chat', function () {
-        return Inertia::render('chat');
-    })->name('chat');
-});
 
 require __DIR__.'/settings.php';
